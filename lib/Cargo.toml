@@ -1,0 +1,13 @@
+[package]
+name = "encrust"
+version = "0.1.0"
+authors = ["Ian Létourneau <letourneau.ian@gmail.com>"]
+description = """
+Encrust is a port of Cucumber to support Behaviour-Driven Development (BDD) with the Rust language.
+"""
+repository = "https://github.com/ianlet/encrust"
+readme = "../README.md"
+keywords = ["encrust", "cucumber", "bdd", "testing", "framework"]
+license = "MIT/Apache-2.0"
+
+[dependencies]
