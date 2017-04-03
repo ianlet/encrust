@@ -1,3 +1,5 @@
-#[test]
-fn it_works() {
-}
+#![allow(dead_code)]
+
+extern crate regex;
+
+mod pattern;
