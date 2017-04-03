@@ -28,7 +28,7 @@ mod test {
     use pattern::{Pattern, StepPattern};
     use step::{Step, StepType};
 
-    use testing::mock::PatternMock;
+    use testing::mock::{PatternMock, step_handler};
 
     const A_NON_MATCHING_DESCRIPTION: &str = "This description does not match";
 
@@ -52,6 +52,4 @@ mod test {
 
         assert!(!step_definition.is_match(&step));
     }
-
-    fn step_handler() {}
 }

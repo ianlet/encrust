@@ -15,4 +15,6 @@ pub mod mock {
             A_PATTERN.to_string()
         }
     }
+
+    pub fn step_handler() {}
 }
