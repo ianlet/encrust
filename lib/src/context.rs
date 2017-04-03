@@ -1,7 +1,7 @@
 use step::Step;
 use step_definition::StepDefinition;
 
-struct Context {
+pub struct Context {
     step_definitions: Vec<StepDefinition>,
 }
 

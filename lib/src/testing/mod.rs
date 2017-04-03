@@ -1,5 +1,8 @@
+#![allow(unused_variables)]
 pub mod mock {
-    use pattern::Pattern;
+    use pattern::{StepArgument, Pattern};
+
+    use std::collections::HashMap;
     use regex::Regex;
 
     const A_PATTERN: &str = "I have cukes in my belly";
@@ -16,5 +19,11 @@ pub mod mock {
         }
     }
 
-    pub fn step_handler() {}
+    pub fn step_handler(arguments: HashMap<String, StepArgument>) {}
+
+    pub fn failing_step_handler(arguments: HashMap<String, StepArgument>) {
+        panic!();
+    }
+
+    pub fn passing_step_handler(arguments: HashMap<String, StepArgument>) {}
 }

@@ -1,7 +1,9 @@
-use pattern::StepPattern;
+use pattern::{StepArgument, StepPattern};
 use step::Step;
 
-type StepHandler = fn();
+use std::collections::HashMap;
+
+pub type StepHandler = fn(arguments: HashMap<String, StepArgument>);
 
 #[derive(Clone, PartialEq, Eq, Debug)]
 pub struct StepDefinition {
@@ -19,6 +21,11 @@ impl StepDefinition {
 
     pub fn is_match(&self, step: &Step) -> bool {
         self.pattern.is_match(&step.description)
+    }
+
+    pub fn handle(&self, description: &String) {
+        let arguments = self.pattern.captures(description);
+        (self.handler)(arguments);
     }
 }
 
