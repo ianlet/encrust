@@ -2,12 +2,14 @@
 
 extern crate regex;
 
-mod context;
+mod suite;
 mod feature;
-mod pattern;
 mod scenario;
+
+mod context;
 mod step;
 mod step_definition;
+mod pattern;
 
 #[cfg(test)]
 #[macro_use]
