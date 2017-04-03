@@ -7,7 +7,6 @@ pub trait Pattern {
     fn to_string(&self) -> String;
 }
 
-
 #[derive(Clone, Debug)]
 pub struct StepPattern {
     source: String,
@@ -41,7 +40,8 @@ impl Eq for StepPattern {}
 #[cfg(test)]
 mod test {
     use super::{Pattern, StepPattern};
-    use regex::Regex;
+
+    use testing::mock::PatternMock;
 
     const A_PATTERN: &str = "I have cukes in my belly";
     const A_DESCRIPTION: &str = "It does not match pattern";
@@ -61,17 +61,5 @@ mod test {
         let step_pattern = StepPattern::new(pattern);
 
         assert!(!step_pattern.is_match(&A_DESCRIPTION.to_string()));
-    }
-
-    struct PatternMock {}
-
-    impl Pattern for PatternMock {
-        fn to_regex(&self) -> Regex {
-            Regex::new(A_PATTERN).unwrap()
-        }
-
-        fn to_string(&self) -> String {
-            A_PATTERN.to_string()
-        }
     }
 }
