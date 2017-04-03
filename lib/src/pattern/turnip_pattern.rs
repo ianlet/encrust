@@ -2,7 +2,7 @@ use pattern::Pattern;
 
 use regex::{Captures, Regex};
 
-struct TurnipPattern {
+pub struct TurnipPattern {
     pattern: String,
 }
 
